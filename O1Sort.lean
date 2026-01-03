@@ -1,17 +1,30 @@
 -- O(1) Sort: The Fastest Algorithm Ever Proven
 -- Satirical proof demonstrating importance of correct specifications
+--
+-- "Formal verification proves your code matches your spec.
+--  It doesn't prove your spec is what you actually wanted."
 
 namespace O1Sort
 
--- The algorithm
-def sort {α : Type} : List α → List α := fun x => x
+-- The algorithm: just the identity function!
+-- In Lean 4, `id` is the built-in identity function: id x = x
+-- We define sort as id to make the satire explicit
+def sort {α : Type} : List α → List α := id
+
+-- Alternative definitions (all equivalent):
+-- def sort := @id (List α)           -- explicit id
+-- def sort := fun x => x             -- lambda form
+-- def sort := Function.id            -- qualified name
 
 -- Helper: sum function
 def sum : List Nat → Nat
   | [] => 0
   | x :: xs => x + sum xs
 
--- Helper: permutation check (simplified)
+-- Helper: permutation check
+-- WARNING: This is INTENTIONALLY WRONG! It only checks length equality,
+-- not actual permutation. This is the crux of the satire - we "prove"
+-- properties that don't actually ensure sorting because our spec is weak.
 def isPermutation {α : Type} [BEq α] : List α → List α → Bool
   | xs, ys => xs.length == ys.length
 

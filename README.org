@@ -2,16 +2,7 @@
 #+AUTHOR: aygp-dr
 #+OPTIONS: toc:2 num:nil
 
-#+ATTR_HTML: :alt CI Status
-[[https://github.com/aygp-dr/lean4-workshop/actions/workflows/ci.yml][https://github.com/aygp-dr/lean4-workshop/actions/workflows/ci.yml/badge.svg]]
-#+ATTR_HTML: :alt Lean Version
-[[https://github.com/leanprover/lean4][https://img.shields.io/badge/Lean-4.23.0-blue.svg?style=flat-square]]
-#+ATTR_HTML: :alt License
-[[https://github.com/aygp-dr/lean4-workshop/blob/main/LICENSE][https://img.shields.io/badge/license-MIT-green.svg?style=flat-square]]
-#+ATTR_HTML: :alt GitHub Stars
-[[https://github.com/aygp-dr/lean4-workshop][https://img.shields.io/github/stars/aygp-dr/lean4-workshop.svg?style=flat-square]]
-#+ATTR_HTML: :alt Documentation
-[[https://orgmode.org][https://img.shields.io/badge/docs-org--mode-blueviolet.svg?style=flat-square]]
+[[https://github.com/aygp-dr/lean4-workshop/actions/workflows/ci.yml][https://github.com/aygp-dr/lean4-workshop/actions/workflows/ci.yml/badge.svg]] [[https://github.com/leanprover/lean4][https://img.shields.io/badge/Lean-4.23.0-blue.svg]] [[https://github.com/aygp-dr/lean4-workshop/blob/main/LICENSE][https://img.shields.io/badge/license-MIT-green.svg]] [[https://github.com/aygp-dr/lean4-workshop][https://img.shields.io/github/stars/aygp-dr/lean4-workshop.svg]] [[https://orgmode.org][https://img.shields.io/badge/docs-org--mode-blueviolet.svg]]
 
 * Overview
 
@@ -41,12 +32,22 @@ gmake check   # Run a quick hello world test
 
 #+BEGIN_SRC
 lean4-workshop/
-├── README.org        # This file
-├── RESOURCES.org     # Learning resources and tutorials
-├── Makefile          # Build and check commands
-├── O1Sort.lean       # Example: satirical "O(1) sort" proof
-├── AGENTS.md         # Issue tracking instructions
-└── .beads/           # Issue tracking database
+├── README.org           # This file
+├── RESOURCES.org        # Learning resources and tutorials
+├── Makefile             # Build and check commands
+├── O1Sort.lean          # Example: satirical "O(1) sort" proof
+├── lean-toolchain       # Lean version pinning
+├── exercises/           # Workshop exercises
+│   ├── Ex01_Basics.lean          # rfl, simp, exact
+│   ├── Ex02_NaturalNumbers.lean  # induction, arithmetic
+│   ├── Ex03_Lists.lean           # list operations
+│   └── Solutions/                # Complete solutions
+│       ├── Sol01_Basics.lean
+│       ├── Sol02_NaturalNumbers.lean
+│       └── Sol03_Lists.lean
+├── .github/workflows/   # CI configuration
+├── AGENTS.md            # Issue tracking instructions
+└── .beads/              # Issue tracking database
 #+END_SRC
 
 * Learning Path
