@@ -2,11 +2,16 @@
 #+AUTHOR: aygp-dr
 #+OPTIONS: toc:2 num:nil
 
-[[https://github.com/aygp-dr/lean4-workshop/actions][https://img.shields.io/github/actions/workflow/status/aygp-dr/lean4-workshop/ci.yml?branch=main&style=flat-square]]
-[[https://github.com/leanprover/lean4][https://img.shields.io/badge/Lean-4.23.0-blue?style=flat-square&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDIgMTlIMjJMMTIgMloiLz48L3N2Zz4=]]
-[[https://github.com/aygp-dr/lean4-workshop/blob/main/LICENSE][https://img.shields.io/badge/license-MIT-green?style=flat-square]]
-[[https://github.com/aygp-dr/lean4-workshop][https://img.shields.io/github/stars/aygp-dr/lean4-workshop?style=flat-square]]
-[[https://orgmode.org][https://img.shields.io/badge/docs-org--mode-blueviolet?style=flat-square]]
+#+ATTR_HTML: :alt CI Status
+[[https://github.com/aygp-dr/lean4-workshop/actions/workflows/ci.yml][https://github.com/aygp-dr/lean4-workshop/actions/workflows/ci.yml/badge.svg]]
+#+ATTR_HTML: :alt Lean Version
+[[https://github.com/leanprover/lean4][https://img.shields.io/badge/Lean-4.23.0-blue.svg?style=flat-square]]
+#+ATTR_HTML: :alt License
+[[https://github.com/aygp-dr/lean4-workshop/blob/main/LICENSE][https://img.shields.io/badge/license-MIT-green.svg?style=flat-square]]
+#+ATTR_HTML: :alt GitHub Stars
+[[https://github.com/aygp-dr/lean4-workshop][https://img.shields.io/github/stars/aygp-dr/lean4-workshop.svg?style=flat-square]]
+#+ATTR_HTML: :alt Documentation
+[[https://orgmode.org][https://img.shields.io/badge/docs-org--mode-blueviolet.svg?style=flat-square]]
 
 * Overview
 
