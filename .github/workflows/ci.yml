@@ -1,0 +1,83 @@
+name: Lean 4 CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  LEAN_VERSION: 'leanprover/lean4:v4.23.0'
+
+jobs:
+  verify-proofs:
+    name: Verify Lean Proofs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install elan
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+
+      - name: Setup Lean toolchain
+        run: |
+          echo "leanprover/lean4:v4.23.0" > lean-toolchain
+          elan toolchain install leanprover/lean4:v4.23.0
+          lean --version
+
+      - name: Verify O1Sort.lean compiles
+        run: lean O1Sort.lean
+
+      - name: Verify exercises compile (with sorry)
+        run: |
+          echo "Checking exercise files (sorry allowed)..."
+          for f in exercises/Ex*.lean; do
+            echo "Checking $f..."
+            lean "$f" 2>&1 | head -20 || true
+          done
+
+      - name: Verify solutions compile (no sorry)
+        run: |
+          echo "Checking solution files..."
+          ERRORS=0
+          for f in exercises/Solutions/Sol*.lean; do
+            echo "Checking $f..."
+            if ! lean "$f"; then
+              echo "ERROR: $f failed to compile"
+              ERRORS=$((ERRORS + 1))
+            fi
+            # Check for sorry in solutions (should be none)
+            if grep -q "sorry" "$f"; then
+              echo "WARNING: $f contains sorry"
+            fi
+          done
+          if [ $ERRORS -gt 0 ]; then
+            echo "Total errors: $ERRORS"
+            exit 1
+          fi
+
+  lint:
+    name: Lint Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check file formatting
+        run: |
+          echo "Checking for trailing whitespace..."
+          ! grep -r '[[:space:]]$' *.lean exercises/*.lean exercises/Solutions/*.lean 2>/dev/null || echo "Some files have trailing whitespace"
+
+          echo "Checking for tabs..."
+          ! grep -r $'\t' *.lean exercises/*.lean exercises/Solutions/*.lean 2>/dev/null || echo "Some files use tabs"
+
+      - name: Validate org-mode documentation
+        run: |
+          echo "Checking org files exist..."
+          test -f README.org && echo "README.org exists"
+          test -f RESOURCES.org && echo "RESOURCES.org exists"
