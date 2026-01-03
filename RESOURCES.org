@@ -1,0 +1,134 @@
+#+TITLE: Lean 4 Learning Resources
+#+AUTHOR: Workshop Participants
+#+DATE: 2026-01-03
+
+* Official Resources
+
+** Primary Learning Paths
+
+*** Functional Programming in Lean (FPIL)
+- URL: https://lean-lang.org/functional_programming_in_lean/
+- Audience: Programmers new to functional programming
+- Focus: Learn Lean as a programming language
+
+*** Theorem Proving in Lean 4 (TPIL)
+- URL: https://lean-lang.org/theorem_proving_in_lean4/
+- Audience: Those interested in formal proofs
+- Focus: Dependent type theory, proof tactics
+
+*** Mathematics in Lean (MIL)
+- URL: https://leanprover-community.github.io/mathematics_in_lean/
+- Audience: Mathematicians
+- Focus: Mathlib library, formal mathematics
+
+* Interactive Games (Fun Approaches)
+
+** Lean Game Server
+URL: https://adam.math.hhu.de/
+
+Available games:
+- Natural Number Game (NNG4) - Prove 2+2=4 and beyond
+- Set Theory Game
+- Logic Game
+- Robo - A story about undergrad mathematics
+
+Play NNG4: https://adam.math.hhu.de/#/g/leanprover-community/NNG4
+
+** Why Games?
+
+Learning Lean "takes time" and can be "frustrating" - games help!
+The NNG teaches induction and basic tactics through puzzles.
+
+* Quick References
+
+** Learn X in Y Minutes
+- URL: https://learnxinyminutes.com/lean4/
+- Compact syntax overview
+
+** Tactic Cheatsheet
+- PDF available from leanprover-community
+- Common tactics reference
+
+* Editor Setup
+
+** VS Code (Recommended)
+Install the lean4 extension from marketplace.
+
+** Emacs (lean4-mode)
+- Repository: https://github.com/leanprover-community/lean4-mode
+- Requires: Emacs 27+, lsp-mode, dash, magit-section
+
+#+BEGIN_SRC elisp
+;; Doom Emacs
+;; In packages.el:
+(package! lean4-mode
+  :recipe (:host github
+           :repo "leanprover-community/lean4-mode"
+           :files ("*.el" "data")))
+
+;; Standard use-package with straight.el
+(use-package lean4-mode
+  :commands lean4-mode
+  :straight (lean4-mode
+             :type git
+             :host github
+             :repo "leanprover-community/lean4-mode"
+             :files ("*.el" "data")))
+#+END_SRC
+
+Key bindings:
+- ~C-c C-i~ : Toggle info view (proof state)
+
+* Toolchain
+
+** Current Installation
+#+BEGIN_SRC sh
+gmake deps  # Check your tools
+#+END_SRC
+
+** elan (Version Manager)
+- URL: https://github.com/leanprover/elan
+- Like rustup for Lean
+- Recommended for managing multiple versions
+
+* Community
+
+** Zulip Chat
+- URL: https://leanprover.zulipchat.com/
+- Active, welcoming community
+- Available 24/7
+
+** GitHub
+- Lean 4: https://github.com/leanprover/lean4
+- Mathlib: https://github.com/leanprover-community/mathlib4
+- Tutorials: https://github.com/leanprover-community/tutorials4
+
+* Amusing Learning Resources
+
+** O(1) Sort - The Identity Function as "Valid Sort"
+A satirical proof demonstrating why specification matters:
+
+#+BEGIN_SRC lean4
+-- "It was already sorted in my heart"
+def sort {α : Type} : List α → List α := fun x => x
+
+-- Proves idempotence, sum preservation, permutation...
+-- But NOT actually sorted!
+-- Moral: Verify the RIGHT properties
+#+END_SRC
+
+Key lesson: Formal verification proves code matches spec.
+It doesn't prove your spec is what you wanted.
+
+* Workshop Project Ideas
+
+1. Natural Number Game completion
+2. Implement and prove basic list operations
+3. Formalize a small mathematical structure
+4. Veil DSL security properties (advanced)
+
+* Local Variables
+
+# Local Variables:
+# org-confirm-babel-evaluate: nil
+# End:
