@@ -35,16 +35,21 @@ lean4-workshop/
 ├── README.org           # This file
 ├── RESOURCES.org        # Learning resources and tutorials
 ├── Makefile             # Build and check commands
-├── O1Sort.lean          # Example: satirical "O(1) sort" proof
 ├── lean-toolchain       # Lean version pinning
+├── examples/            # Proof examples
+│   ├── satirical/       # Why specifications matter
+│   │   ├── 01_O1Sort.lean       # O(1) sort with weak permutation spec
+│   │   ├── 02_O1Search.lean     # O(1) search with weak element spec
+│   │   ├── 03_O1Hash.lean       # O(1) hash with weak uniqueness spec
+│   │   ├── 04_O1Compress.lean   # O(1) compress with weak size spec
+│   │   └── 05_O1Encrypt.lean    # O(1) encrypt with weak reversibility spec
+│   └── correct/         # How specifications should be written
+│       └── 01_CorrectSort.lean  # Proper sort with permutation proof
 ├── exercises/           # Workshop exercises
 │   ├── Ex01_Basics.lean          # rfl, simp, exact
 │   ├── Ex02_NaturalNumbers.lean  # induction, arithmetic
 │   ├── Ex03_Lists.lean           # list operations
 │   └── Solutions/                # Complete solutions
-│       ├── Sol01_Basics.lean
-│       ├── Sol02_NaturalNumbers.lean
-│       └── Sol03_Lists.lean
 ├── .github/workflows/   # CI configuration
 ├── AGENTS.md            # Issue tracking instructions
 └── .beads/              # Issue tracking database
@@ -71,21 +76,28 @@ lean4-workshop/
 
 See [[file:RESOURCES.org][RESOURCES.org]] for the complete list.
 
-** 3. Example: O(1) Sort Proof
+** 3. Satirical Examples: Why Specifications Matter
 
-Our [[file:O1Sort.lean][O1Sort.lean]] demonstrates why specifications matter:
+The =examples/satirical/= directory contains "O(1)" algorithms that satisfy weak specifications but don't actually work:
+
+| Example | The Trick | Lesson |
+|---------+-----------+--------|
+| O1Sort | Identity function | Permutation spec must check elements |
+| O1Search | Return first element | Must verify we found the TARGET |
+| O1Hash | Return length | Determinism alone is useless |
+| O1Compress | Return empty list | Must require decompression |
+| O1Encrypt | Identity function | Reversibility without confidentiality |
 
 #+BEGIN_SRC lean4
--- The "fastest" sort algorithm
-def sort {α : Type} : List α → List α := fun x => x
+-- From examples/satirical/01_O1Sort.lean
+def sort {α : Type} : List α → List α := id
 
--- It's idempotent!
-theorem sort_idempotent (xs : List α) :
-  sort (sort xs) = sort xs := rfl
-
--- But is the output actually sorted? 🤡
--- (Out of scope for this paper)
+-- WARNING: This is INTENTIONALLY WRONG!
+def isPermutation : List α → List α → Bool
+  | xs, ys => xs.length == ys.length  -- Only checks length!
 #+END_SRC
+
+The =examples/correct/= directory shows how specifications /should/ be written.
 
 *Moral*: Formal verification proves your code matches your spec. It doesn't prove your spec is what you actually wanted.
 
@@ -118,6 +130,9 @@ Key binding: =C-c C-i= toggles the proof state view.
 | =check= | Verify installation with hello world |
 | =build= | Build project with Lake |
 | =clean= | Remove build artifacts |
+| =verify= | Verify all Lean files compile |
+| =verify-examples= | Check satirical and correct examples |
+| =verify-exercises= | Check exercises and solutions |
 
 * Contributing
 
