@@ -36,15 +36,23 @@ lean4-workshop/
 ├── RESOURCES.org        # Learning resources and tutorials
 ├── Makefile             # Build and check commands
 ├── lean-toolchain       # Lean version pinning
-├── examples/            # Proof examples
-│   ├── satirical/       # Why specifications matter
-│   │   ├── 01_O1Sort.lean       # O(1) sort with weak permutation spec
-│   │   ├── 02_O1Search.lean     # O(1) search with weak element spec
-│   │   ├── 03_O1Hash.lean       # O(1) hash with weak uniqueness spec
-│   │   ├── 04_O1Compress.lean   # O(1) compress with weak size spec
-│   │   └── 05_O1Encrypt.lean    # O(1) encrypt with weak reversibility spec
-│   └── correct/         # How specifications should be written
-│       └── 01_CorrectSort.lean  # Proper sort with permutation proof
+├── examples/            # Runnable examples
+│   ├── satirical/       # Why specifications matter (5 files)
+│   ├── correct/         # Proper specifications
+│   ├── fp/              # Functional programming
+│   │   ├── 01_OptionMonad.lean  # Option type and safe operations
+│   │   ├── 02_IOMonad.lean      # IO and side effects
+│   │   ├── 03_StateMonad.lean   # Stateful computations
+│   │   ├── 04_TypeClasses.lean  # Polymorphism and overloading
+│   │   └── 05_Recursion.lean    # Recursion patterns
+│   ├── proofs/          # Theorem proving
+│   │   ├── 01_Logic.lean        # Propositional logic
+│   │   ├── 02_Equality.lean     # Equality and rewriting
+│   │   └── 03_Induction.lean    # Inductive proofs
+│   └── data/            # Data structures
+│       ├── 01_Structures.lean   # Records and products
+│       ├── 02_Arrays.lean       # Efficient arrays
+│       └── 03_Inductive.lean    # Custom inductive types
 ├── exercises/           # Workshop exercises
 │   ├── Ex01_Basics.lean          # rfl, simp, exact
 │   ├── Ex02_NaturalNumbers.lean  # induction, arithmetic

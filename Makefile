@@ -45,6 +45,24 @@ verify-examples: ## Verify all examples compile
 		lean "$$f" || exit 1; \
 	done
 	@echo ""
+	@echo "=== Verifying FP Examples ==="
+	@for f in examples/fp/*.lean; do \
+		echo "Checking $$f..."; \
+		lean "$$f" || exit 1; \
+	done
+	@echo ""
+	@echo "=== Verifying Proof Examples ==="
+	@for f in examples/proofs/*.lean; do \
+		echo "Checking $$f..."; \
+		lean "$$f" || exit 1; \
+	done
+	@echo ""
+	@echo "=== Verifying Data Structure Examples ==="
+	@for f in examples/data/*.lean; do \
+		echo "Checking $$f..."; \
+		lean "$$f" || exit 1; \
+	done
+	@echo ""
 	@echo "All examples verified!"
 
 verify-exercises: ## Verify exercises compile (with sorry)
